@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import GradientButton from "./GradientButton";
+import ContactModal from "./ContactModal";
 
 const NAV_LINKS = [
   { label: "Início", href: "#hero" },
@@ -13,6 +14,7 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   const handleNavClick = () => setMenuOpen(false);
 
@@ -37,7 +39,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:block">
-          <GradientButton href="mailto:alphatechsolucoesbr@gmail.com" size="default">
+          <GradientButton onClick={() => setContactModalOpen(true)} size="default">
             Fale conosco
           </GradientButton>
         </div>
@@ -81,13 +83,15 @@ export default function Header() {
           </a>
         ))}
         <GradientButton
-          href="mailto:alphatechsolucoesbr@gmail.com"
+          onClick={() => { setContactModalOpen(true); setMenuOpen(false); }}
           size="large"
           className="mt-4"
         >
           Fale conosco
         </GradientButton>
       </div>
+
+      <ContactModal isOpen={contactModalOpen} onClose={() => setContactModalOpen(false)} />
     </header>
   );
 }
