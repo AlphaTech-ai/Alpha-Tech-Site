@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <Header onOpenContact={() => setContactModalOpen(true)} />
       <main>
-        <Hero />
+        <Hero onOpenContact={() => setContactModalOpen(true)} />
         <Services />
         <HowWeHelp />
         <HowItWorks />

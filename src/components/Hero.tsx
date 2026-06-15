@@ -1,6 +1,10 @@
 import GradientButton from "./GradientButton";
 
-export default function Hero() {
+interface Props {
+  onOpenContact?: () => void;
+}
+
+export default function Hero({ onOpenContact }: Props) {
   return (
     <section
       id="hero"
@@ -39,7 +43,7 @@ export default function Hero() {
 
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <GradientButton
-              href="mailto:alphatechsolucoesbr@gmail.com"
+              onClick={onOpenContact}
               size="large"
             >
               Quero um orçamento
