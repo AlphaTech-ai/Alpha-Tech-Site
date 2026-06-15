@@ -1,6 +1,10 @@
 import GradientButton from "./GradientButton";
 
-export default function CTA() {
+interface Props {
+  onOpenContact?: () => void;
+}
+
+export default function CTA({ onOpenContact }: Props) {
   return (
     <section id="contato" className="relative py-24 lg:py-32">
       <div className="absolute inset-0 overflow-hidden">
@@ -20,7 +24,7 @@ export default function CTA() {
 
         <div className="mt-10">
           <GradientButton
-            href="mailto:alphatechsolucoesbr@gmail.com"
+            onClick={onOpenContact}
             size="large"
             className="px-10 py-5 text-lg"
           >
@@ -29,7 +33,7 @@ export default function CTA() {
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <path d="M22 7l-10 7L2 7" />
               </svg>
-              Enviar e-mail
+              Enviar mensagem
             </span>
           </GradientButton>
         </div>
