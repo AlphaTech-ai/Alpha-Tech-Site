@@ -41,8 +41,9 @@ export default function ContactForm() {
         setFormData({ name: "", email: "", phone: "", message: "" });
         setStatus("idle");
       }, 2000);
-    } catch (error) {
+    } catch (error: any) {
       console.error("EmailJS error:", error);
+      alert("Erro detalhado: " + (error?.text || error?.message || JSON.stringify(error)));
       setStatus("error");
     }
   };
