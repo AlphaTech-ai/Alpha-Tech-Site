@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import GradientButton from "./GradientButton";
 
@@ -13,10 +13,6 @@ export default function ContactForm() {
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const formRef = useRef<HTMLFormElement>(null);
-
-  useEffect(() => {
-    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
-  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -37,7 +33,8 @@ export default function ContactForm() {
           from_email: formData.email,
           phone: formData.phone,
           message: formData.message,
-        }
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
       setStatus("success");
       setTimeout(() => {
