@@ -47,7 +47,8 @@ export default function ContactModal({ isOpen, onClose }: Props) {
         setFormData({ name: "", email: "", phone: "", message: "" });
         setStatus("idle");
       }, 2000);
-    } catch {
+    } catch (error) {
+      console.error("EmailJS error:", error);
       setStatus("error");
     }
   };
