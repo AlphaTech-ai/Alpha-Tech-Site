@@ -24,17 +24,31 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus("sending");
 
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    console.log("EmailJS serviceId:", serviceId);
+    console.log("EmailJS templateId:", templateId);
+    console.log("EmailJS publicKey:", publicKey);
+
+    if (!publicKey) {
+      alert("DEBUG: publicKey está undefined. Env var não foi carregada.");
+      setStatus("error");
+      return;
+    }
+
     try {
       await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        serviceId!,
+        templateId!,
         {
           from_name: formData.name,
           from_email: formData.email,
           phone: formData.phone,
           message: formData.message,
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        publicKey
       );
       setStatus("success");
       setTimeout(() => {
