@@ -3,6 +3,11 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import GradientButton from "./GradientButton";
+import {
+  EMAILJS_SERVICE_ID,
+  EMAILJS_TEMPLATE_ID,
+  EMAILJS_PUBLIC_KEY,
+} from "@/lib/emailjs";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -24,40 +29,25 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus("sending");
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-    console.log("EmailJS serviceId:", serviceId);
-    console.log("EmailJS templateId:", templateId);
-    console.log("EmailJS publicKey:", publicKey);
-
-    if (!publicKey) {
-      alert("DEBUG: publicKey está undefined. Env var não foi carregada.");
-      setStatus("error");
-      return;
-    }
-
     try {
       await emailjs.send(
-        serviceId!,
-        templateId!,
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         {
           from_name: formData.name,
           from_email: formData.email,
           phone: formData.phone,
           message: formData.message,
         },
-        publicKey
+        EMAILJS_PUBLIC_KEY
       );
       setStatus("success");
       setTimeout(() => {
         setFormData({ name: "", email: "", phone: "", message: "" });
         setStatus("idle");
       }, 2000);
-    } catch (error: any) {
+    } catch (error) {
       console.error("EmailJS error:", error);
-      alert("Erro detalhado: " + (error?.text || error?.message || JSON.stringify(error)));
       setStatus("error");
     }
   };
