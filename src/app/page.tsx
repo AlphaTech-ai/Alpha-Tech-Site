@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -10,25 +9,25 @@ import About from "@/components/About";
 import Differentiators from "@/components/Differentiators";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
-import ContactModal from "@/components/ContactModal";
+
+const scrollToContact = () => {
+  document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
+};
 
 export default function Home() {
-  const [contactModalOpen, setContactModalOpen] = useState(false);
-
   return (
     <>
-      <Header onOpenContact={() => setContactModalOpen(true)} />
+      <Header onOpenContact={scrollToContact} />
       <main>
-        <Hero onOpenContact={() => setContactModalOpen(true)} />
+        <Hero onOpenContact={scrollToContact} />
         <Services />
         <HowWeHelp />
         <HowItWorks />
         <About />
         <Differentiators />
-        <CTA onOpenContact={() => setContactModalOpen(true)} />
+        <CTA />
       </main>
       <Footer />
-      <ContactModal isOpen={contactModalOpen} onClose={() => setContactModalOpen(false)} />
     </>
   );
 }

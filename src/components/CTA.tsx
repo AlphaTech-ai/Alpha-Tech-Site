@@ -1,10 +1,6 @@
-import GradientButton from "./GradientButton";
+import ContactForm from "./ContactForm";
 
-interface Props {
-  onOpenContact?: () => void;
-}
-
-export default function CTA({ onOpenContact }: Props) {
+export default function CTA() {
   return (
     <section id="contato" className="relative py-24 lg:py-32">
       <div className="absolute inset-0 overflow-hidden">
@@ -22,20 +18,8 @@ export default function CTA({ onOpenContact }: Props) {
           responde com uma proposta clara, sem enrolação.
         </p>
 
-        <div className="mt-10">
-          <GradientButton
-            onClick={onOpenContact}
-            size="large"
-            className="px-10 py-5 text-lg"
-          >
-            <span className="flex items-center gap-3">
-              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="M22 7l-10 7L2 7" />
-              </svg>
-              Enviar mensagem
-            </span>
-          </GradientButton>
+        <div className="mx-auto mt-10 max-w-lg text-left">
+          <ContactForm />
         </div>
       </div>
     </section>
