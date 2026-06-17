@@ -121,14 +121,15 @@ export default function Chatbot() {
         <div className="flex h-[500px] w-[360px] flex-col overflow-hidden rounded-2xl border border-border bg-dark/95 backdrop-blur-xl shadow-2xl shadow-primary/10 animate-in sm:w-[400px]">
           <div className="flex items-center justify-between border-b border-border px-5 py-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-xs font-bold text-white">
-                AT
-              </div>
+              <img
+                src="/logo.png"
+                alt="Alpha.Tech"
+                className="h-8 w-8 rounded-lg object-cover"
+              />
               <div>
                 <p className="text-sm font-semibold text-white">
                   Alpha.Tech Assistente
                 </p>
-                <p className="text-xs text-muted">Online • Groq Llama</p>
               </div>
             </div>
             <button
