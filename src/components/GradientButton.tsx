@@ -3,7 +3,7 @@ interface Props {
   href?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
-  variant?: "primary" | "outline";
+  variant?: "primary" | "outline" | "ghost";
   size?: "default" | "large";
   className?: string;
   disabled?: boolean;
@@ -20,7 +20,7 @@ export default function GradientButton({
   disabled = false,
 }: Props) {
   const base =
-    "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 cursor-pointer";
+    "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 cursor-pointer";
 
   const sizes = {
     default: "px-6 py-3 text-sm",
@@ -29,9 +29,11 @@ export default function GradientButton({
 
   const variants = {
     primary:
-      "bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 hover:shadow-lg hover:shadow-primary/25",
+      "bg-primary text-white hover:bg-primary-dark shadow-sm",
     outline:
-      "border border-white/20 text-white hover:border-primary hover:text-primary bg-transparent hover:bg-white/5",
+      "border border-border text-muted-light hover:border-primary hover:text-primary bg-transparent",
+    ghost:
+      "text-muted hover:text-white bg-transparent",
   };
 
   const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`;

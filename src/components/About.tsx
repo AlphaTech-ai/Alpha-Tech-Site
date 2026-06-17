@@ -3,54 +3,89 @@ import SectionBadge from "./SectionBadge";
 
 export default function About() {
   return (
-    <section id="sobre" className="relative py-24 lg:py-32">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" />
-
+    <section id="sobre" className="relative py-20 lg:py-28">
       <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <AnimatedSection>
-            <SectionBadge text="Sobre a Alpha.Tech" />
+            <SectionBadge text="Sobre" />
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              Tecnologia que{" "}
-              <span className="gradient-text">impulsiona</span> resultados
+              Uma empresa de TI que fala a sua língua
             </h2>
             <p className="mt-6 leading-relaxed text-muted">
-              Se você dirige um pequeno ou médio negócio, sabe como é frustrante
-              pagar caro por um site ou sistema que não entrega resultado.
-              Ou pior: depender de agências que respondem uma vez por semana.
+              A Alpha.Tech nasceu de uma insatisfação: a maioria das empresas de TI 
+              trata pequeno e médio empresário como se fosse grande corporação. 
+              Prometem suporte que nunca vem, usam jargão técnico pra confundir 
+              e cobram caro por serviços que não entregam.
             </p>
             <p className="mt-4 leading-relaxed text-muted">
-              A <span className="font-semibold text-white">Alpha.Tech</span>{" "}
-              existe pra mudar isso. Criamos sites, automações, sistemas e
-              chatbots que realmente funcionam, com atendimento direto de
-              quem desenvolve. Você manda uma mensagem e a gente responde no
-              mesmo dia. Simples assim.
+              A gente faz diferente. Atendemos empresas em Guanambi e região com 
+              suporte técnico de verdade, projetos web bem feitos e preço que cabe 
+              no orçamento. Aqui você manda mensagem e quem responde é quem resolve. 
+              Sem setores, sem burocracia, sem desaparecer.
             </p>
+            <div className="mt-6 grid grid-cols-3 gap-4 border-t border-border pt-6">
+              <div>
+                <span className="block text-2xl font-bold text-primary">+20</span>
+                <span className="text-xs text-muted">Projetos entregues</span>
+              </div>
+              <div>
+                <span className="block text-2xl font-bold text-primary">+15</span>
+                <span className="text-xs text-muted">Clientes ativos</span>
+              </div>
+              <div>
+                <span className="block text-2xl font-bold text-primary">&lt;24h</span>
+                <span className="text-xs text-muted">Tempo de resposta</span>
+              </div>
+            </div>
           </AnimatedSection>
 
-          <AnimatedSection className="relative">
-            <div className="relative rounded-2xl border border-white/5 bg-card p-8">
-              <div className="absolute -top-4 -right-4 h-24 w-24 rounded-full bg-gradient-to-br from-primary/20 to-secondary/10 blur-2xl" />
-              <div className="absolute -bottom-4 -left-4 h-24 w-24 rounded-full bg-gradient-to-tr from-secondary/10 to-primary/20 blur-2xl" />
-
-              <div className="space-y-5">
-                <p className="text-sm leading-relaxed text-muted">
-                  Cada projeto que entregamos é construído do zero para atender
-                  exatamente o que seu negócio precisa. Nada de templates
-                  genéricos ou soluções que não encaixam.
-                </p>
-                <p className="text-sm leading-relaxed text-muted">
-                  Nosso tempo de resposta é em horas, o desenvolvimento é ágil
-                  e você acompanha tudo de perto. Sem surpresas no final.
-                </p>
-              </div>
-
-              <div className="mt-6 border-t border-white/5 pt-6">
-                <p className="text-center text-sm font-medium text-white">
-                  &ldquo;Falta um site profissional? Quer automatizar o
-                  atendimento? Precisa de um sistema sob medida? Chama a
-                  gente que a gente resolve.&rdquo;
-                </p>
+          <AnimatedSection>
+            <div className="rounded-xl border border-border bg-card p-6 sm:p-8">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold">Sem contrato de fidelidade</h3>
+                    <p className="text-sm text-muted">Você contrata só o que precisa, quando precisa.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold">Orçamento sem compromisso</h3>
+                    <p className="text-sm text-muted">Conversamos, entendemos sua necessidade e só depois apresentamos o valor.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold">Atendimento direto com quem desenvolve</h3>
+                    <p className="text-sm text-muted">Você não fala com atendente. Fala com quem faz.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold">Suporte mesmo depois da entrega</h3>
+                    <p className="text-sm text-muted">Projeto pronto não significa fim do relacionamento. Seguimos juntos.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </AnimatedSection>

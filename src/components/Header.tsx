@@ -4,7 +4,6 @@ import { useState } from "react";
 import GradientButton from "./GradientButton";
 
 const NAV_LINKS = [
-  { label: "Início", href: "#hero" },
   { label: "Serviços", href: "#servicos" },
   { label: "Como funciona", href: "#como-funciona" },
   { label: "Sobre", href: "#sobre" },
@@ -21,11 +20,11 @@ export default function Header({ onOpenContact }: Props) {
   const handleNavClick = () => setMenuOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-white/5">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-xl border-b border-border">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
-        <a href="#hero" className="text-2xl font-bold tracking-tight">
-            <span className="text-white">Alpha.</span>
-            <span className="gradient-text">Tech</span>
+        <a href="#hero" className="text-xl font-bold tracking-tight">
+          <span className="text-white">Alpha.</span>
+          <span className="text-primary">Tech</span>
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -33,7 +32,7 @@ export default function Header({ onOpenContact }: Props) {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted transition-colors hover:text-white"
+              className="text-sm text-muted transition-colors hover:text-muted-light"
             >
               {link.label}
             </a>
