@@ -27,8 +27,7 @@ export const metadata: Metadata = {
     "Alpha.Tech",
   ],
   icons: {
-    icon: { url: "/favicon.ico", type: "image/x-icon" },
-    apple: { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    icon: "/favicon.ico",
   },
   openGraph: {
     title: "Alpha.Tech | Tecnologia, Automação e IA",
@@ -49,7 +48,7 @@ const jsonLd = {
   "@type": "Organization",
   name: "Alpha.Tech",
   url: "https://alphatech.vercel.app",
-  logo: "https://alphatech.vercel.app/logo.png",
+  logo: "https://alphatech.vercel.app/favicon.ico",
   description:
     "Criamos sites, sistemas e automações inteligentes para empresas que querem vender mais, atender melhor e economizar tempo.",
   email: "alphatechsolucoesbr@gmail.com",
