@@ -4,7 +4,7 @@ interface Props {
 
 export default function SectionBadge({ text }: Props) {
   return (
-    <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+    <span className="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-primary">
       {text}
     </span>
   );

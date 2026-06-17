@@ -46,14 +46,13 @@ export default function ContactForm() {
         setFormData({ name: "", email: "", phone: "", message: "" });
         setStatus("idle");
       }, 2000);
-    } catch (error) {
-      console.error("EmailJS error:", error);
+    } catch {
       setStatus("error");
     }
   };
 
   const inputClass =
-    "w-full rounded-xl border border-border bg-dark px-4 py-3 text-white placeholder-muted outline-none transition-all duration-200 focus:border-primary focus:ring-1 focus:ring-primary/50";
+    "w-full rounded-lg border border-border bg-surface px-4 py-3 text-white placeholder-muted outline-none transition-all duration-200 focus:border-primary focus:ring-1 focus:ring-primary/50";
 
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -90,19 +89,18 @@ export default function ContactForm() {
         onChange={handleChange}
         required
         rows={4}
-        placeholder="Sua mensagem"
+        placeholder="Conte um pouco sobre o que você precisa"
         className={`${inputClass} resize-none`}
       />
 
       {status === "success" && (
         <p className="text-sm text-green-400">
-          Mensagem enviada com sucesso! Entraremos em contato em breve.
+          Mensagem enviada! Entraremos em contato em breve.
         </p>
       )}
       {status === "error" && (
         <p className="text-sm text-red-400">
-          Erro ao enviar mensagem. Verifique as configurações de e-mail ou
-          tente novamente mais tarde.
+          Erro ao enviar. Tente novamente ou nos chame no Instagram.
         </p>
       )}
 
