@@ -93,8 +93,12 @@ export async function POST(req: Request) {
     });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Erro desconhecido";
+    const isQuota = message.includes("429") || message.includes("quota") || message.includes("Quota");
     return new Response(
-      JSON.stringify({ error: message }),
+      JSON.stringify({
+        error: message,
+        type: isQuota ? "quota_exceeded" : "unknown",
+      }),
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }

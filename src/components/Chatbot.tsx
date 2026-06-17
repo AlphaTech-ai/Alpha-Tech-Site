@@ -57,7 +57,10 @@ export default function Chatbot() {
       });
 
       if (!res.ok) {
-        throw new Error("Erro na resposta do servidor");
+        const body = await res.json().catch(() => ({}));
+        const err = new Error(body.type || "unknown");
+        (err as any).type = body.type;
+        throw err;
       }
 
       if (!res.body) {
@@ -82,13 +85,15 @@ export default function Chatbot() {
         { role: "assistant", content: accumulated },
       ]);
       setStreamingContent("");
-    } catch {
+    } catch (err: any) {
+      const isQuota = err?.type === "quota_exceeded";
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content:
-            "Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente mais tarde.",
+          content: isQuota
+            ? "⚠️ **Limite de uso excedido.** O assistente ficou temporariamente indisponível. Entre em contato conosco pelo e-mail **alphatechsolucoesbr@gmail.com** ou pelo formulário do site."
+            : "Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente mais tarde.",
         },
       ]);
     } finally {
