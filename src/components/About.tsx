@@ -15,16 +15,10 @@ export default function About() {
               <span className="gradient-text">impulsiona</span> resultados
             </h2>
             <p className="mt-6 leading-relaxed text-muted">
-              Se você dirige um pequeno ou médio negócio, sabe como é frustrante
-              pagar caro por um site ou sistema que não entrega resultado.
-              Ou pior: depender de agências que respondem uma vez por semana.
-            </p>
-            <p className="mt-4 leading-relaxed text-muted">
               A <span className="font-semibold text-white">Alpha.Tech</span>{" "}
-              existe pra mudar isso. Criamos sites, automações, sistemas e
-              chatbots que realmente funcionam, com atendimento direto de
-              quem desenvolve. Você manda uma mensagem e a gente responde no
-              mesmo dia. Simples assim.
+              cria sites, automações, sistemas e chatbots que funcionam de
+              verdade. O atendimento é direto com quem desenvolve. Você
+              manda uma mensagem e a gente responde no mesmo dia.
             </p>
           </AnimatedSection>
 
@@ -35,21 +29,20 @@ export default function About() {
 
               <div className="space-y-5">
                 <p className="text-sm leading-relaxed text-muted">
-                  Cada projeto que entregamos é construído do zero para atender
-                  exatamente o que seu negócio precisa. Nada de templates
-                  genéricos ou soluções que não encaixam.
+                  Cada projeto é construído do zero pra atender exatamente
+                  o que seu negócio precisa. Nada de template genérico ou
+                  solução que não encaixa.
                 </p>
                 <p className="text-sm leading-relaxed text-muted">
-                  Nosso tempo de resposta é em horas, o desenvolvimento é ágil
+                  O tempo de resposta é em horas, o desenvolvimento é ágil
                   e você acompanha tudo de perto. Sem surpresas no final.
                 </p>
               </div>
 
               <div className="mt-6 border-t border-white/5 pt-6">
                 <p className="text-center text-sm font-medium text-white">
-                  &ldquo;Falta um site profissional? Quer automatizar o
-                  atendimento? Precisa de um sistema sob medida? Chama a
-                  gente que a gente resolve.&rdquo;
+                  &ldquo;Falta um site? Quer automatizar o atendimento?
+                  Precisa de um sistema? Chama a gente que a gente resolve.&rdquo;
                 </p>
               </div>
             </div>

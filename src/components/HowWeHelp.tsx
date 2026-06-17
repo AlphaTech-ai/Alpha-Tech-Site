@@ -8,15 +8,15 @@ const INSIGHTS = [
   },
   {
     problem: "Seu negócio não aparece no Google e parece amador perto dos concorrentes.",
-    solution: "Um site profissional, rápido e otimizado pra vender, com design que passa credibilidade.",
+    solution: "Um site rápido e otimizado pra vender, com design que passa credibilidade.",
   },
   {
     problem: "Você passa horas fazendo tarefas repetitivas que um sistema poderia fazer em segundos.",
-    solution: "Automações inteligentes que eliminam trabalho manual e liberam seu tempo pro que importa.",
+    solution: "Automações que eliminam trabalho manual e liberam seu tempo pro que importa.",
   },
   {
     problem: "As informações do seu negócio estão espalhadas em planilhas, cadernos e na sua cabeça.",
-    solution: "Um sistema personalizado que centraliza tudo e organiza sua operação de ponta a ponta.",
+    solution: "Um sistema personalizado que centraliza tudo e organiza sua operação.",
   },
   {
     problem: "Você sabe que precisa de tecnologia mas não sabe por onde começar ou tem medo do custo.",
@@ -47,22 +47,12 @@ export default function HowWeHelp() {
             <AnimatedSection key={index}>
               <div className="group rounded-2xl border border-white/5 bg-card p-6 transition-all duration-300 hover:border-primary/20 sm:p-8">
                 <div className="grid gap-4 sm:grid-cols-2 sm:gap-10">
-                  <div>
-                    <span className="mb-2 inline-block text-xs font-semibold uppercase tracking-wider text-red-400">
-                      O problema
-                    </span>
-                    <p className="text-sm leading-relaxed text-muted sm:text-base">
-                      {item.problem}
-                    </p>
-                  </div>
-                  <div>
-                    <span className="mb-2 inline-block text-xs font-semibold uppercase tracking-wider text-secondary">
-                      Como resolvemos
-                    </span>
-                    <p className="text-sm leading-relaxed text-muted sm:text-base">
-                      {item.solution}
-                    </p>
-                  </div>
+                  <p className="text-sm leading-relaxed text-muted sm:text-base">
+                    {item.problem}
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted sm:text-base">
+                    {item.solution}
+                  </p>
                 </div>
               </div>
             </AnimatedSection>

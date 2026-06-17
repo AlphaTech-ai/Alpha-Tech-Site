@@ -26,19 +26,18 @@ export default function Hero({ onOpenContact }: Props) {
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
         <div className="mx-auto max-w-4xl text-center">
           <span className="inline-block mb-6 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium text-primary">
-            Soluções digitais que entregam resultado de verdade
+            Tecnologia que resolve
           </span>
 
           <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            O seu negócio merece uma{" "}
+            Seu negócio merece uma{" "}
             <span className="gradient-text">presença digital</span>{" "}
             que vende, atende e organiza tudo sozinho
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-            Enquanto você cuida do que importa, a Alpha.Tech cria sites,
-            sistemas e automações inteligentes que fazem seu negócio crescer
-            de verdade. Sem mensalidades abusivas, sem burocracia.
+            A Alpha.Tech cria sites, sistemas e automações que fazem seu
+            negócio crescer. Sem mensalidades abusivas, sem burocracia.
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -56,9 +55,9 @@ export default function Hero({ onOpenContact }: Props) {
 
         <div className="mx-auto mt-20 max-w-2xl text-center">
           <p className="text-sm text-muted leading-relaxed">
-            Na Alpha.Tech você não precisa entender de tecnologia. A gente
-            entende do seu negócio, desenha a solução ideal e entrega tudo
-            funcionando. Sem gerente de relacionamento, sem conversa fiada.
+            Você não precisa entender de tecnologia. A gente entende do seu
+            negócio, desenha a solução e entrega tudo funcionando. Sem
+            gerente de relacionamento, sem conversa fiada.
           </p>
         </div>
       </div>

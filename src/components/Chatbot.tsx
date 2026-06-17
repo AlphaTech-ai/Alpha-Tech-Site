@@ -13,7 +13,7 @@ export default function Chatbot() {
     {
       role: "assistant",
       content:
-        "Olá! 👋 Sou o assistente virtual da **Alpha.Tech**. Como posso ajudar você hoje?",
+        "Olá! 👋 Sou o assistente da **Alpha.Tech**. Como posso ajudar?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -94,9 +94,9 @@ export default function Chatbot() {
         {
           role: "assistant",
           content: isQuota
-            ? "⚠️ **Limite de uso excedido.** O assistente ficou temporariamente indisponível. Entre em contato conosco pelo e-mail **alphatechsolucoesbr@gmail.com** ou pelo formulário do site."
+            ? "⚠️ Limite de uso excedido. O assistente ficou temporariamente indisponível. Entre em contato pelo e-mail **alphatechsolucoesbr@gmail.com** ou pelo formulário do site."
             : isMissingKey
-              ? "⚠️ **Erro de configuração.** O assistente está temporariamente desabilitado. Entre em contato conosco pelo e-mail **alphatechsolucoesbr@gmail.com**."
+              ? "⚠️ Erro de configuração. O assistente está temporariamente desabilitado. Entre em contato pelo e-mail **alphatechsolucoesbr@gmail.com**."
               : isInvalidMessages
                 ? "Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente mais tarde."
                 : "Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente mais tarde.",

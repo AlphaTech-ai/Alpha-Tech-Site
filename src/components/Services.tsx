@@ -4,7 +4,7 @@ import SectionBadge from "./SectionBadge";
 const SERVICES = [
   {
     title: "Criação de Sites",
-    desc: "Sites profissionais que vendem, convertem visitantes em clientes e passam credibilidade da primeira vez que alguém acessa.",
+    desc: "Sites que vendem e passam credibilidade desde o primeiro clique. Feitos pra converter visitante em cliente.",
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -15,7 +15,7 @@ const SERVICES = [
   },
   {
     title: "Automações",
-    desc: "Chega de perder horas com tarefas manuais. Automatizamos processos repetitivos pro seu negócio funcionar sozinho.",
+    desc: "Chega de perder horas com tarefas manuais. A gente automatiza processos repetitivos pro seu negócio funcionar sozinho.",
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="3" />
@@ -25,7 +25,7 @@ const SERVICES = [
   },
   {
     title: "Inteligência Artificial",
-    desc: "IA aplicada ao seu negócio: chatbots que vendem, análise de dados que orientam decisões e atendimento que funciona 24 horas.",
+    desc: "Chatbots que vendem, análise de dados que orientam decisões e atendimento que funciona 24 horas por dia.",
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z" />
@@ -37,7 +37,7 @@ const SERVICES = [
   },
   {
     title: "Sistemas Personalizados",
-    desc: "Sistemas web feitos sob medida pro seu negócio. Gestão, agendamento, vendas, controle financeiro e o que você precisar.",
+    desc: "Sistemas web feitos sob medida pro seu negócio. Gestão, agendamento, vendas, controle financeiro e o que mais precisar.",
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
@@ -48,7 +48,7 @@ const SERVICES = [
   },
   {
     title: "Chatbots e Atendimento Inteligente",
-    desc: "Um assistente virtual que atende seus clientes no WhatsApp e no site 24 horas por dia, qualifica leads e ainda vende por você.",
+    desc: "Um assistente virtual que atende seus clientes no WhatsApp e no site 24 horas por dia. Qualifica leads e vende por você.",
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -57,7 +57,7 @@ const SERVICES = [
   },
   {
     title: "Identidade Digital",
-    desc: "Sua marca do zero: identidade visual, presença digital e tudo que você precisa pra se destacar e ser levado a sério online.",
+    desc: "Sua marca do zero. Identidade visual, presença digital e tudo que você precisa pra ser levado a sério online.",
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
