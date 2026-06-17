@@ -3,6 +3,7 @@
 @theme inline {
   --color-primary: #7C3AED;
   --color-primary-dark: #5B21B6;
+  --color-secondary: #FF2DAA;
   --color-accent: #2563EB;
   --color-accent-light: #3B82F6;
   --color-dark: #0A0A0A;
@@ -14,6 +15,31 @@
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 8s ease-in-out infinite;
+  --animate-float-slow: float 10s ease-in-out infinite;
+  --animate-glow: glow 3s ease-in-out infinite alternate;
+  --animate-gradient: gradient 8s ease infinite;
+  --animate-pulse-slow: pulse-slow 4s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes glow {
+    0% { opacity: 0.4; }
+    100% { opacity: 0.8; }
+  }
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.15; }
+    50% { opacity: 0.3; }
+  }
 }
 
 html {
@@ -28,6 +54,13 @@ body {
 ::selection {
   background: #7C3AED;
   color: white;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #7C3AED, #FF2DAA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @media (max-width: 768px) {

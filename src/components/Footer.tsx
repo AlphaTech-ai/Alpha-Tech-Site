@@ -6,7 +6,7 @@ export default function Footer() {
           <div>
             <a href="#hero" className="text-xl font-bold tracking-tight">
               <span className="text-white">Alpha.</span>
-              <span className="text-primary">Tech</span>
+              <span className="gradient-text">Tech</span>
             </a>
             <p className="mt-2 max-w-xs text-sm text-muted">
               Suporte de TI e soluções digitais para empresas em Guanambi e Bahia.

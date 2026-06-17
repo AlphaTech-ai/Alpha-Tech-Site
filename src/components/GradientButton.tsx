@@ -29,7 +29,7 @@ export default function GradientButton({
 
   const variants = {
     primary:
-      "bg-primary text-white hover:bg-primary-dark shadow-sm",
+      "bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 hover:shadow-lg hover:shadow-primary/25",
     outline:
       "border border-border text-muted-light hover:border-primary hover:text-primary bg-transparent",
     ghost:
