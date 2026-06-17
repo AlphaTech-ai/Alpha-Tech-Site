@@ -6,8 +6,8 @@ import Services from "@/components/Services";
 import HowWeHelp from "@/components/HowWeHelp";
 import HowItWorks from "@/components/HowItWorks";
 import About from "@/components/About";
-import Carrossel from "@/components/Carousel";
-import Differentiators from "@/components/Differentiators";
+import LocalSEO from "@/components/LocalSEO";
+import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -25,8 +25,8 @@ export default function Home() {
         <HowWeHelp />
         <HowItWorks />
         <About />
-        <Carrossel />
-        <Differentiators />
+        <LocalSEO />
+        <FAQ />
         <CTA />
       </main>
       <Footer />

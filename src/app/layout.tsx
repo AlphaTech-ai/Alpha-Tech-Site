@@ -13,30 +13,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alpha.Tech | Tecnologia, Automação e IA para seu negócio",
+  title: "Alpha.Tech Soluções | Suporte de TI e Desenvolvimento Web em Guanambi, BA",
   description:
-    "Criamos sites, sistemas e automações inteligentes para empresas que querem vender mais, atender melhor e economizar tempo.",
+    "Empresa de TI em Guanambi especializada em suporte técnico, manutenção de computadores, redes empresariais, criação de sites, sistemas sob medida e automação. Atendimento presencial e remoto em toda a Bahia.",
   keywords: [
-    "criação de sites",
-    "automação",
-    "inteligência artificial",
-    "chatbot",
-    "sistemas personalizados",
-    "marketing digital",
-    "pequenos negócios",
-    "Alpha.Tech",
+    "suporte de TI Guanambi",
+    "manutenção de computadores Guanambi",
+    "assistência técnica de informática Guanambi",
+    "empresa de TI Guanambi",
+    "criação de sites Guanambi",
+    "redes empresariais Guanambi",
+    "suporte técnico remoto Bahia",
   ],
   icons: {
     icon: { url: "/favicon.ico", type: "image/x-icon" },
     apple: { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
   },
   openGraph: {
-    title: "Alpha.Tech | Tecnologia, Automação e IA",
+    title: "Alpha.Tech Soluções | Suporte de TI e Desenvolvimento Web em Guanambi, BA",
     description:
-      "Criamos sites, sistemas e automações inteligentes para empresas que querem vender mais, atender melhor e economizar tempo.",
+      "Empresa de TI em Guanambi. Suporte técnico, manutenção de computadores, redes, sites e sistemas personalizados para sua empresa.",
     type: "website",
     locale: "pt_BR",
-    siteName: "Alpha.Tech",
+    siteName: "Alpha.Tech Soluções",
   },
   robots: {
     index: true,
@@ -46,14 +45,24 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Alpha.Tech",
+  "@type": "LocalBusiness",
+  name: "Alpha.Tech Soluções",
   url: "https://alphatech.vercel.app",
   logo: "https://alphatech.vercel.app/logo.png",
   description:
-    "Criamos sites, sistemas e automações inteligentes para empresas que querem vender mais, atender melhor e economizar tempo.",
+    "Suporte de TI, manutenção de computadores, redes empresariais, criação de sites e sistemas sob medida em Guanambi, BA.",
   email: "alphatechsolucoesbr@gmail.com",
   foundingDate: "2026",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Guanambi",
+    addressRegion: "BA",
+    addressCountry: "BR",
+  },
+  areaServed: ["Guanambi", "Candiba", "Caetité", "Palmas de Monte Alto", "Bahia"],
+  priceRange: "$$",
+  openingHours: "Mo-Fr 08:00-18:00",
+  sameAs: ["https://instagram.com/alphatechai"],
 };
 
 export default function RootLayout({
