@@ -28,7 +28,7 @@ const SLIDES = [
   },
   {
     title: "IA que entende do seu negócio",
-    desc: "Não é IA genérica. Criamos assistentes inteligentes treinados com as informações da sua empresa. Seu chatbot vai conhecer seus produtos, suas políticas e seu tom de voz — atendendo clientes como se fosse você, 24 horas por dia.",
+    desc: "Não é IA genérica. Criamos assistentes inteligentes treinados com as informações da sua empresa. Seu chatbot vai conhecer seus produtos, suas políticas e seu tom de voz e atendendo clientes como se fosse você, 24 horas por dia.",
     icon: (
       <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2a4 4 0 0 1 4 4c0 2-2 3-2 5h-4c0-2-2-3-2-5a4 4 0 0 1 4-4z" />
@@ -40,7 +40,7 @@ const SLIDES = [
   },
   {
     title: "Sistemas feitos sob medida",
-    desc: "Você não precisa se adaptar a um sistema genérico. A gente constrói do zero a solução ideal pro seu negócio: gestão, agendamento, vendas, financeiro — do jeito que você sempre sonhou, sem pagar por funcionalidades que não usa.",
+    desc: "Você não precisa se adaptar a um sistema genérico. A gente constrói do zero a solução ideal pro seu negócio: gestão, agendamento, vendas, financeiro e do jeito que você sempre sonhou, sem pagar por funcionalidades que não usa.",
     icon: (
       <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
@@ -51,7 +51,7 @@ const SLIDES = [
   },
   {
     title: "Atendimento sem burocracia",
-    desc: "Na Alpha.Tech, você não fala com robô nem com atendente que não entende do assunto. Quem responde sua mensagem é quem vai desenvolver seu projeto. Direto, rápido e sem enrolação — do jeito que empreendedor merece.",
+    desc: "Na Alpha.Tech, você não fala com robô nem com atendente que não entende do assunto. Quem responde sua mensagem é quem vai desenvolver seu projeto. Direto, rápido e sem enrolação do jeito que empreendedor merece.",
     icon: (
       <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -63,7 +63,7 @@ const SLIDES = [
   },
   {
     title: "Suporte que não te abandona",
-    desc: "Entregamos o projeto e a história não acaba ali. Você tem suporte contínuo, atualizações e melhorias sempre que precisar. Não somos uma agência que faz e some — somos parceiros do seu crescimento.",
+    desc: "Entregamos o projeto e a história não acaba ali. Você tem suporte contínuo, atualizações e melhorias sempre que precisar. Não somos uma agência que faz e some, somos parceiros do seu crescimento.",
     icon: (
       <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />

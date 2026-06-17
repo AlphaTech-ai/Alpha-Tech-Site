@@ -122,7 +122,7 @@ export default function Chatbot() {
                 <p className="text-sm font-semibold text-white">
                   Alpha.Tech Assistente
                 </p>
-                <p className="text-xs text-muted">Online • IA Gemini</p>
+                <p className="text-xs text-muted">Online • Groq Llama</p>
               </div>
             </div>
             <button

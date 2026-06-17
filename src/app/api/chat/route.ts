@@ -1,5 +1,3 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
-
 const SYSTEM_PROMPT = `Você é o assistente virtual da Alpha.Tech, uma empresa brasileira de tecnologia fundada em 2026.
 
 INFORMAÇÕES DA EMPRESA:
@@ -28,7 +26,7 @@ REGRAS:
 - Mantenha as respostas concisas (no máximo 3-4 parágrafos).`;
 
 export async function POST(req: Request) {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
 
   if (!apiKey) {
     return new Response(
@@ -46,39 +44,91 @@ export async function POST(req: Request) {
     );
   }
 
+  const groqMessages = [
+    { role: "system", content: SYSTEM_PROMPT },
+    ...messages.map((m: { role: string; content: string }) => ({
+      role: m.role,
+      content: m.content,
+    })),
+  ];
+
   try {
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const response = await fetch(
+      "https://api.groq.com/openai/v1/chat/completions",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: "llama-3.3-70b-versatile",
+          messages: groqMessages,
+          stream: true,
+        }),
+      }
+    );
 
-    const history = messages.slice(0, -1).map((m: { role: string; content: string }) => ({
-      role: m.role === "assistant" ? "model" : "user",
-      parts: [{ text: m.content }],
-    }));
+    if (!response.ok) {
+      const body = await response.text();
+      const isQuota = body.includes("429") || body.includes("rate_limit");
+      return new Response(
+        JSON.stringify({
+          error: body,
+          type: isQuota ? "quota_exceeded" : "unknown",
+        }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
+    }
 
-    const chat = model.startChat({
-      history,
-      systemInstruction: {
-        role: "system",
-        parts: [{ text: SYSTEM_PROMPT }],
-      },
-    });
+    if (!response.body) {
+      throw new Error("Resposta vazia da API Groq");
+    }
 
-    const lastMessage = messages[messages.length - 1].content;
-    const result = await chat.sendMessageStream(lastMessage);
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
 
     const stream = new ReadableStream({
       async start(controller) {
         try {
-          for await (const chunk of result.stream) {
-            const text = chunk.text();
-            if (text) {
-              controller.enqueue(new TextEncoder().encode(text));
+          let buffer = "";
+
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            buffer += decoder.decode(value, { stream: true });
+
+            const lines = buffer.split("\n");
+            buffer = lines.pop() || "";
+
+            for (const line of lines) {
+              const trimmed = line.trim();
+
+              if (!trimmed || !trimmed.startsWith("data: ")) continue;
+
+              const data = trimmed.slice(6);
+
+              if (data === "[DONE]") continue;
+
+              try {
+                const parsed = JSON.parse(data);
+                const content = parsed?.choices?.[0]?.delta?.content || "";
+                if (content) {
+                  controller.enqueue(new TextEncoder().encode(content));
+                }
+              } catch {
+                continue;
+              }
             }
           }
+
           controller.close();
         } catch {
           controller.enqueue(
-            new TextEncoder().encode(`\n\nDesculpe, ocorreu um erro ao processar sua mensagem.`)
+            new TextEncoder().encode(
+              "\n\nDesculpe, ocorreu um erro ao processar sua mensagem."
+            )
           );
           controller.close();
         }
@@ -93,12 +143,8 @@ export async function POST(req: Request) {
     });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Erro desconhecido";
-    const isQuota = message.includes("429") || message.includes("quota") || message.includes("Quota");
     return new Response(
-      JSON.stringify({
-        error: message,
-        type: isQuota ? "quota_exceeded" : "unknown",
-      }),
+      JSON.stringify({ error: message, type: "unknown" }),
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
