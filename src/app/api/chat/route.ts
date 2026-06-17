@@ -23,7 +23,8 @@ PERSONALIDADE:
 REGRAS:
 - Não invente informações que não estejam acima.
 - Se não souber responder algo, direcione para o e-mail de contato.
-- Mantenha as respostas concisas (no máximo 3-4 parágrafos).`;
+- Seja extremamente conciso: responda em no máximo 2 frases curtas.
+- Prefira respostas diretas e objetivas, sem rodeios.`;
 
 export async function POST(req: Request) {
   const apiKey = process.env.GROQ_API_KEY;
