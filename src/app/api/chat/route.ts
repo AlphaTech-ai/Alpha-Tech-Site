@@ -31,7 +31,7 @@ export async function POST(req: Request) {
 
   if (!apiKey) {
     return new Response(
-      JSON.stringify({ error: "API key não configurada" }),
+      JSON.stringify({ error: "API key não configurada", type: "missing_api_key" }),
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }
@@ -40,7 +40,7 @@ export async function POST(req: Request) {
 
   if (!messages || !Array.isArray(messages) || messages.length === 0) {
     return new Response(
-      JSON.stringify({ error: "Mensagens inválidas" }),
+      JSON.stringify({ error: "Mensagens inválidas", type: "invalid_messages" }),
       { status: 400, headers: { "Content-Type": "application/json" } }
     );
   }

@@ -87,13 +87,19 @@ export default function Chatbot() {
       setStreamingContent("");
     } catch (err: any) {
       const isQuota = err?.type === "quota_exceeded";
+      const isMissingKey = err?.type === "missing_api_key";
+      const isInvalidMessages = err?.type === "invalid_messages";
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
           content: isQuota
             ? "⚠️ **Limite de uso excedido.** O assistente ficou temporariamente indisponível. Entre em contato conosco pelo e-mail **alphatechsolucoesbr@gmail.com** ou pelo formulário do site."
-            : "Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente mais tarde.",
+            : isMissingKey
+              ? "⚠️ **Erro de configuração.** O assistente está temporariamente desabilitado. Entre em contato conosco pelo e-mail **alphatechsolucoesbr@gmail.com**."
+              : isInvalidMessages
+                ? "Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente mais tarde."
+                : "Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente mais tarde.",
         },
       ]);
     } finally {
