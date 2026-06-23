@@ -25,7 +25,7 @@ export default function Hero({ onOpenContact }: Props) {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
         <div className="mx-auto max-w-4xl text-center">
-          <span className="inline-block mb-6 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium text-primary">
+          <span className="inline-block mb-6 rounded-full border border-primary/20 bg-primary/5 px-5 py-2 text-sm font-medium text-primary">
             Tecnologia que resolve
           </span>
 
