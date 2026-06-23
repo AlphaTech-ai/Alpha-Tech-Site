@@ -63,8 +63,9 @@ export default function ContactForm() {
         value={formData.name}
         onChange={handleChange}
         required
+        disabled={status === "sending"}
         placeholder="Seu nome"
-        className={inputClass}
+        className={`${inputClass} ${status === "sending" ? "opacity-50 cursor-not-allowed" : ""}`}
       />
       <input
         type="email"
@@ -72,8 +73,9 @@ export default function ContactForm() {
         value={formData.email}
         onChange={handleChange}
         required
+        disabled={status === "sending"}
         placeholder="Seu e-mail"
-        className={inputClass}
+        className={`${inputClass} ${status === "sending" ? "opacity-50 cursor-not-allowed" : ""}`}
       />
       <input
         type="tel"
@@ -81,29 +83,39 @@ export default function ContactForm() {
         value={formData.phone}
         onChange={handleChange}
         required
+        disabled={status === "sending"}
         placeholder="Seu telefone"
-        className={inputClass}
+        className={`${inputClass} ${status === "sending" ? "opacity-50 cursor-not-allowed" : ""}`}
       />
       <textarea
         name="message"
         value={formData.message}
         onChange={handleChange}
         required
+        disabled={status === "sending"}
         rows={4}
         placeholder="Sua mensagem"
-        className={`${inputClass} resize-none`}
+        className={`${inputClass} resize-none ${status === "sending" ? "opacity-50 cursor-not-allowed" : ""}`}
       />
 
       {status === "success" && (
-        <p className="text-sm text-green-400">
+        <div className="flex items-center gap-2 rounded-xl border border-green-400/20 bg-green-400/5 px-4 py-3 text-sm text-green-400">
+          <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+            <polyline points="22 4 12 14.01 9 11.01" />
+          </svg>
           Mensagem enviada com sucesso! Entraremos em contato em breve.
-        </p>
+        </div>
       )}
       {status === "error" && (
-        <p className="text-sm text-red-400">
-          Erro ao enviar mensagem. Verifique as configurações de e-mail ou
-          tente novamente mais tarde.
-        </p>
+        <div className="flex items-center gap-2 rounded-xl border border-red-400/20 bg-red-400/5 px-4 py-3 text-sm text-red-400">
+          <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="12" />
+            <line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>
+          Erro ao enviar mensagem. Tente novamente mais tarde.
+        </div>
       )}
 
       <GradientButton
@@ -112,7 +124,16 @@ export default function ContactForm() {
         className="w-full"
         disabled={status === "sending"}
       >
-        {status === "sending" ? "Enviando..." : "Enviar mensagem"}
+        {status === "sending" ? (
+          <span className="flex items-center justify-center gap-2">
+            <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+            </svg>
+            Enviando...
+          </span>
+        ) : (
+          "Enviar mensagem"
+        )}
       </GradientButton>
     </form>
   );

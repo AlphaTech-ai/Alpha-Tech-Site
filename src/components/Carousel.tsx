@@ -113,7 +113,11 @@ export default function Carrossel() {
 
         <div className="mt-14">
           <div className="relative mx-auto max-w-3xl">
-            <div className="gradient-border overflow-hidden rounded-2xl bg-card">
+            <div
+              className="gradient-border overflow-hidden rounded-2xl bg-card"
+              onMouseEnter={() => setIsAutoPlaying(false)}
+              onMouseLeave={() => setIsAutoPlaying(true)}
+            >
               <div className="relative min-h-[360px]">
                 {SLIDES.map((slide, index) => (
                   <div

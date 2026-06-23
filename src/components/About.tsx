@@ -41,8 +41,8 @@ export default function About() {
 
               <div className="mt-6 border-t border-white/5 pt-6">
                 <p className="text-center text-sm font-medium text-white">
-                  &ldquo;Falta um site? Quer automatizar o atendimento?
-                  Precisa de um sistema? Chama a gente que a gente resolve.&rdquo;
+                  Seu próximo projeto começa com uma mensagem.
+                  A gente escuta, propõe e entrega sem burocracia.
                 </p>
               </div>
             </div>

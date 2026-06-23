@@ -60,6 +60,15 @@ export default function Hero({ onOpenContact }: Props) {
             gerente de relacionamento, sem conversa fiada.
           </p>
         </div>
+
+        <div className="mt-16 flex justify-center">
+          <div className="flex flex-col items-center gap-1.5 text-muted animate-bounce">
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M7 13l5 5 5-5" />
+              <path d="M7 6l5 5 5-5" />
+            </svg>
+          </div>
+        </div>
       </div>
     </section>
   );
