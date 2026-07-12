@@ -34,8 +34,8 @@ export default function Header({ onOpenContact }: Props) {
     }`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
         <a href="#hero" className="text-2xl font-bold tracking-tight">
-          <span className="text-white">Alpha.</span>
-          <span className="gradient-text">Tech</span>
+          <span className="text-white">Alpha</span>
+          <span className="gradient-text">.Tech</span>
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">

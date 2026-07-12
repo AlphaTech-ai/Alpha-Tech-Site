@@ -5,8 +5,8 @@ export default function Footer() {
         <div className="flex flex-col items-center gap-6 text-center md:flex-row md:items-start md:justify-between md:text-left">
           <div>
             <a href="#hero" className="text-2xl font-bold tracking-tight">
-              <span className="text-white">Alpha.</span>
-              <span className="gradient-text">Tech</span>
+              <span className="text-white">Alpha</span>
+              <span className="gradient-text">.Tech</span>
             </a>
             <p className="mt-2 max-w-xs text-sm text-muted">
               Tecnologia para negócios que querem evoluir.

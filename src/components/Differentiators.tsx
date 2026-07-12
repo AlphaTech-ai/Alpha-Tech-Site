@@ -76,7 +76,7 @@ export default function Differentiators() {
           <SectionBadge text="Diferenciais" />
           <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
             Por que empresas confiam na{" "}
-            <span className="text-white">Alpha.</span><span className="gradient-text">Tech</span>
+            <span className="text-white">Alpha</span><span className="gradient-text">.Tech</span>
           </h2>
         </AnimatedSection>
 
