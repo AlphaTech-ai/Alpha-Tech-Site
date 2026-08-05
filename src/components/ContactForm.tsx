@@ -9,18 +9,28 @@ import {
   EMAILJS_PUBLIC_KEY,
 } from "@/lib/emailjs";
 
+const SERVICE_CATEGORIES = [
+  "Criação de Sites",
+  "Automações",
+  "Inteligência Artificial",
+  "Sistemas Personalizados",
+  "Chatbots e Atendimento Inteligente",
+  "Outro",
+];
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    category: "",
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -37,13 +47,14 @@ export default function ContactForm() {
           from_name: formData.name,
           from_email: formData.email,
           phone: formData.phone,
+          category: formData.category,
           message: formData.message,
         },
         EMAILJS_PUBLIC_KEY
       );
       setStatus("success");
       setTimeout(() => {
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", category: "", message: "" });
         setStatus("idle");
       }, 2000);
     } catch (error) {
@@ -87,6 +98,38 @@ export default function ContactForm() {
         placeholder="Seu telefone"
         className={`${inputClass} ${status === "sending" ? "opacity-50 cursor-not-allowed" : ""}`}
       />
+      <div className="relative">
+        <select
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+          required
+          disabled={status === "sending"}
+          className={`${inputClass} cursor-pointer appearance-none pr-10 ${
+            formData.category ? "text-white" : "text-muted"
+          } ${status === "sending" ? "opacity-50 cursor-not-allowed" : ""}`}
+        >
+          <option value="" disabled>
+            Qual serviço você procura?
+          </option>
+          {SERVICE_CATEGORIES.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+        <svg
+          className="pointer-events-none absolute top-1/2 right-4 h-4 w-4 -translate-y-1/2 text-muted"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </div>
       <textarea
         name="message"
         value={formData.message}
