@@ -127,17 +127,11 @@ export default function Chatbot() {
         <div className="flex h-[500px] w-[360px] flex-col overflow-hidden rounded-2xl border border-border bg-dark/95 backdrop-blur-xl shadow-2xl shadow-primary/10 animate-in sm:w-[400px]">
           <div className="flex items-center justify-between border-b border-border px-5 py-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary text-white">
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="4" y="8" width="16" height="12" rx="2" />
-                  <path d="M12 8V4" />
-                  <rect x="9" y="2" width="6" height="3" rx="1" />
-                  <circle cx="9" cy="14" r="1" />
-                  <circle cx="15" cy="14" r="1" />
-                  <path d="M8 20v2" />
-                  <path d="M16 20v2" />
-                </svg>
-              </div>
+              <img
+                src="/logo.png"
+                alt="Alpha.Tech"
+                className="h-8 w-8 rounded-lg object-cover"
+              />
               <div>
                 <p className="text-sm font-semibold text-white">
                   Alpha.Tech Assistente
@@ -277,17 +271,11 @@ export default function Chatbot() {
             <path d="M6 6l12 12" />
           </svg>
         ) : (
-          <svg
-            className="h-6 w-6"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          </svg>
+          <img
+            src="/logo.png"
+            alt="Abrir chat"
+            className="h-8 w-8 rounded-full object-cover"
+          />
         )}
       </button>
     </div>
