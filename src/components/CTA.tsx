@@ -1,6 +1,7 @@
 "use client";
 
 import ContactForm from "./ContactForm";
+import RobotIcon from "./RobotIcon";
 
 const openChatbot = () => {
   window.dispatchEvent(new Event("alpha-tech:open-chat"));
@@ -28,17 +29,7 @@ export default function CTA() {
           onClick={openChatbot}
           className="mt-4 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-primary"
         >
-          <svg
-            className="h-4 w-4"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-          </svg>
+          <RobotIcon className="h-5 w-5" />
           Em caso de dúvida, fale com o assistente
         </button>
 
