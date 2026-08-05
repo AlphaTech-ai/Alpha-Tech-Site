@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import RobotIcon from "./RobotIcon";
 
 interface Message {
   role: "user" | "assistant";
@@ -127,11 +128,9 @@ export default function Chatbot() {
         <div className="flex h-[500px] w-[360px] flex-col overflow-hidden rounded-2xl border border-border bg-dark/95 backdrop-blur-xl shadow-2xl shadow-primary/10 animate-in sm:w-[400px]">
           <div className="flex items-center justify-between border-b border-border px-5 py-4">
             <div className="flex items-center gap-3">
-              <img
-                src="/logo.png"
-                alt="Alpha.Tech"
-                className="h-8 w-8 rounded-lg object-cover"
-              />
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary/20 to-secondary/10">
+                <RobotIcon className="h-6 w-6" />
+              </div>
               <div>
                 <p className="text-sm font-semibold text-white">
                   Alpha.Tech Assistente
@@ -271,11 +270,7 @@ export default function Chatbot() {
             <path d="M6 6l12 12" />
           </svg>
         ) : (
-          <img
-            src="/logo.png"
-            alt="Abrir chat"
-            className="h-8 w-8 rounded-full object-cover"
-          />
+          <RobotIcon className="h-7 w-7" />
         )}
       </button>
     </div>
