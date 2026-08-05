@@ -270,7 +270,7 @@ export default function Chatbot() {
             <path d="M6 6l12 12" />
           </svg>
         ) : (
-          <RobotIcon className="h-7 w-7" />
+          <RobotIcon className="h-7 w-7" white />
         )}
       </button>
     </div>

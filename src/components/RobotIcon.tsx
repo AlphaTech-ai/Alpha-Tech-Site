@@ -1,4 +1,13 @@
-export default function RobotIcon({ className = "" }: { className?: string }) {
+export default function RobotIcon({
+  className = "",
+  white = false,
+}: {
+  className?: string;
+  white?: boolean;
+}) {
+  const body = white ? "#fff" : "url(#robot-grad)";
+  const eye = white ? "#7B2CFF" : "#fff";
+
   return (
     <svg
       className={className}
@@ -14,7 +23,7 @@ export default function RobotIcon({ className = "" }: { className?: string }) {
       </defs>
       <path
         d="M12 7V4"
-        stroke="url(#robot-grad)"
+        stroke={body}
         strokeWidth="1.8"
         strokeLinecap="round"
       />
@@ -24,21 +33,21 @@ export default function RobotIcon({ className = "" }: { className?: string }) {
         width="6"
         height="3"
         rx="1.5"
-        fill="url(#robot-grad)"
+        fill={body}
       />
-      <path d="M7 7.5v3M17 7.5v3" stroke="url(#robot-grad)" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M7 7.5v3M17 7.5v3" stroke={body} strokeWidth="1.8" strokeLinecap="round" />
       <rect
         x="3.5"
         y="7.5"
         width="17"
         height="12.5"
         rx="3.5"
-        fill="url(#robot-grad)"
+        fill={body}
       />
-      <circle cx="9" cy="13" r="1.3" fill="#fff" />
-      <circle cx="15" cy="13" r="1.3" fill="#fff" />
-      <path d="M10.5 17h3" stroke="#fff" strokeWidth="1.4" strokeLinecap="round" />
-      <path d="M9.5 20v1.5M14.5 20v1.5" stroke="url(#robot-grad)" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="9" cy="13" r="1.3" fill={eye} />
+      <circle cx="15" cy="13" r="1.3" fill={eye} />
+      <path d="M10.5 17h3" stroke={eye} strokeWidth="1.4" strokeLinecap="round" />
+      <path d="M9.5 20v1.5M14.5 20v1.5" stroke={body} strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   );
 }
